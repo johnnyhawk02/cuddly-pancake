@@ -1,6 +1,6 @@
-import 'imagePaths.dart' show imagePaths;
+import '../imagePaths.dart' show imagePaths;
 import 'package:flutter/material.dart';
-import 'package:flutter/foundation.dart';
+//import 'package:flutter/foundation.dart';
 
 class ImageAndText extends StatelessWidget {
   const ImageAndText({
