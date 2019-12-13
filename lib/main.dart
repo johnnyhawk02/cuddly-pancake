@@ -46,23 +46,35 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: new AppBar(
+
         title: new Text('Makaton'),
+        actions: <Widget>[
+          FlatButton(
+            textColor: Colors.white,
+            onPressed: random,
+            child: Text("Randomize"),
+            //shape: CircleBorder(side: BorderSide(color: Colors.transparent)),
+          ),
+        ],
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(20.0),
-        child: Column(
-          children: <Widget>[
-            new RaisedButton(
-              onPressed: random,
-              textColor: Colors.white,
-              color: Colors.red,
-              padding: const EdgeInsets.all(16.0),
-              child: new Text(
-                "RANDOMIZE",
+      body: Container(
+        color: Colors.white,
+        child: Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: Column(
+            children: <Widget>[
+              new RaisedButton(
+                onPressed: random,
+                textColor: Colors.white,
+                color: Colors.red,
+                padding: const EdgeInsets.all(16.0),
+                child: new Text(
+                  "RANDOMIZE",
+                ),
               ),
-            ),
-            ImageAndText(imageList: _imageList),
-          ],
+              ImageAndText(imageList: _imageList),
+            ],
+          ),
         ),
       ),
     );
@@ -82,13 +94,15 @@ class ImageAndText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
 
-     // color: Colors.white,
+      //color: Colors.white,
       //height: 600,
       child: new GridView.count(
+
         childAspectRatio: 1.5,
-        crossAxisCount: 3,
+        crossAxisCount: 4,
         children: new List<Widget>.generate(60, (index) {
           return Column(
+
             mainAxisAlignment: MainAxisAlignment.center,
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.center,
