@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
+import 'package:flutter_web_image_picker/flutter_web_image_picker.dart';
 import "word_list.dart" show WordList;
 import 'imagePaths.dart' show imagePaths;
 import 'package:webmakaton/widgets/image_and_text_02.dart' show ImageAndText;
@@ -34,7 +35,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   List<String> _imageList = WordList.randomList(100);
-
+  Image image;
   void random() {
     setState(() {
       _imageList = WordList.randomList(100);
@@ -57,7 +58,12 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               FlatButton(
                 textColor: Colors.white,
-                onPressed: random,
+                  onPressed: () async {
+                    final _image = await FlutterWebImagePicker.getImage;
+                    setState(() {
+                      image = _image;
+                    });
+                  } ,
                 child: Text("Randomize"),
               ),
             ],
@@ -69,7 +75,9 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Padding(
           padding: const EdgeInsets.all(20.0),
           child: Column(
+
             children: <Widget>[
+
 //              new RaisedButton(
 //                onPressed: random,
 //                textColor: Colors.white,
@@ -79,7 +87,8 @@ class _MyHomePageState extends State<MyHomePage> {
 //                  "RANDOMIZE",
 //                ),
 //              ),
-              ImageAndText(imageList: _imageList),
+              ImageAndText(imageList: _imageList,image: image),
+
             ],
           ),
         ),
