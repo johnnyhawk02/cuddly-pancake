@@ -19,20 +19,16 @@ class ImageAndText extends StatelessWidget {
         crossAxisCount: 3,
         children: new List<Widget>.generate(60, (index) {
           return Column(
-
-            //mainAxisAlignment: MainAxisAlignment.center,
-            //mainAxisSize: MainAxisSize.min,
-            //crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Container(
                 child: Row(
-
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     Column(
                       children: <Widget>[
                         Image.asset(
-                          'assets/images/symbols/' + imagePaths[_imageList[index]],
+                          'assets/images/symbols/' +
+                              imagePaths[_imageList[index]],
                           fit: BoxFit.contain,
                           width: 75,
                         ),
@@ -56,7 +52,6 @@ class ImageAndText extends StatelessWidget {
                   ],
                 ),
               ),
-
             ],
           );
         }),

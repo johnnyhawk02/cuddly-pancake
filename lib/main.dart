@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
 import "word_list.dart" show WordList;
 import 'imagePaths.dart' show imagePaths;
-import 'package:webmakaton/widgets/image_and_text_01.dart' show ImageAndText;
+import 'package:webmakaton/widgets/image_and_text_02.dart' show ImageAndText;
 //void main(){
 //  WordList.randomList(100).forEach(
 //          (word){
